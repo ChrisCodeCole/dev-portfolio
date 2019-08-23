@@ -1,9 +1,12 @@
 import React from 'react';
 import './App.css';
+import LandingPageContainer from './components/LandingPage/LandingPageContainer';
 
 function App() {
   return (
-    <h1>My portfolio</h1>
+    <div className="AppContainer">
+      <LandingPageContainer />
+    </div>
   );
 }
 

@@ -1,0 +1,23 @@
+:root {
+    /* Color Variables */
+    --main-bg-color: #07100B; 
+    --secondary-bg-color: #B9B9B9; 
+    --primary-text-color: #004BC2; 
+    --secondary-text-color: #F1F1F1; 
+
+    /* Fonts Variables*/
+
+    /* 400, 600italic */
+    --primary-font: 'Crimson Text', serif; 
+
+    /* 400, 600 */
+    --secondary-font: 'Open Sans', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
