@@ -1,0 +1,8 @@
+======================================
+TO DO:
+    1. Make bars more clickable
+    2. Come up with an idea for initial loading of page (less boring landing page)
+    3. Figure out how to translate cards to center of page
+    4. Possibly create another component (or html element) to expand after card moves to center.
+    5. Sketch out idea for information below different projects.
+======================================
