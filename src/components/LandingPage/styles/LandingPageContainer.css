@@ -1,0 +1,7 @@
+.LandingPageContainer-mainContainer {
+    display: grid;
+    grid: repeat(3, 33.33%) / repeat(5, 20%);
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-bg-color);
+}

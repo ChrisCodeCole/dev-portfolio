@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './styles/CardsContainer.css';
 import Card from './Card';
+import image1 from '../../assets/images/evan-wise-jzCmSH6en5c-unsplash.jpg';
+import image2 from '../../assets/images/harper-sunday-nUpgLnikqkQ-unsplash.jpg';
+import image3 from '../../assets/images/jametlene-reskp-VDrErQEF9e4-unsplash.jpg';
 
 function CardsContainer(props) {
-  // const [isOnline, setIsOnline] = useState(null);
+    const [selectedImage, setSelectedImage] = useState(0);
+    const works = [{path: image1}, {path: image2}, {path: image3}];
 
   // useEffect(() => {
   //   function handleStatusChange(status) {
@@ -18,8 +22,16 @@ function CardsContainer(props) {
   // });
 
   return(
-        <div>
-            {/* map out cards here */}
+        <div className="CardsContainer-mainContainer">
+            {works.map((work, i) =>
+                    <Card 
+                        key={i} 
+                        path={work.path} 
+                        isSelected={selectedImage === i}
+                        onClick={()=> setSelectedImage(i)} 
+                    />
+                )
+            }
         </div>
     );
 }

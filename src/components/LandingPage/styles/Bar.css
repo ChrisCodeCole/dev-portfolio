@@ -1,0 +1,25 @@
+.Bar-barStyles {
+    border-radius: 20%;
+    border-bottom: 0.2vw solid var(--primary-text-color);
+    width: 25%;
+    margin-bottom: 5%;
+    cursor: pointer;
+    box-shadow: 0.02vw 0.02vw 0.1vw 0.005vw rgb(111, 152, 219);
+}
+
+.Bar-widthAnimation {
+    animation: expandBar 0.5s ease-in-out forwards;
+}
+
+.Bar-lastChild {
+    margin-bottom: 20%;
+}
+
+@keyframes expandBar {
+    from {
+      transform: translateX(0) scaleX(1);
+    }
+    to {
+      transform: translateX(50%) scaleX(2);
+    }
+}

@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Bar.css';
+import posed from 'react-pose';
 
-function Bar(props) {
+const AnimatedBar = posed.div({
+  isNotActive: { scaleX: 1, x: '0%' },
+  isActive: { scaleX: 2, x: '50%' }
+});
+
+
+function Bar({ lastChild, isActive, onClick }) {
   // const [isOnline, setIsOnline] = useState(null);
 
   // useEffect(() => {
@@ -17,7 +24,23 @@ function Bar(props) {
   // });
 
   return(
-    <h1>Bar</h1>
+    // <div 
+    //   className={
+    //     `Bar-barStyles 
+    //     ${lastChild ? 'Bar-lastChild' : ''} 
+    //     ${isActive ? 'Bar-widthAnimation' : ''}
+    //   `}
+    //   onClick={onClick}
+    // />
+    <AnimatedBar
+      className={
+          `Bar-barStyles 
+          ${lastChild ? 'Bar-lastChild' : ''} 
+        `
+      }
+      pose={isActive ? 'isActive' : 'isNotActive'}
+      onClick={onClick}
+    />
   );
 }
 

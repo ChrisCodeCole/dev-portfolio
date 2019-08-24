@@ -3,8 +3,8 @@ import './styles/BarsContainer.css';
 import Bar from './Bar';
 
 function BarsContainer(props) {
-  // const [isOnline, setIsOnline] = useState(null);
-
+  const [selectedBarIndex, setSelectedBarIndex] = useState(0);
+  const works = [{}, {}, {}, {}, {}, {}];
   // useEffect(() => {
   //   function handleStatusChange(status) {
   //     setIsOnline(status.isOnline);
@@ -18,10 +18,19 @@ function BarsContainer(props) {
   // });
 
   return(
-    <div>
-      {/* return bars based off of mapped state */}
+    <div className="BarsContainer-mainContainer">
+      {
+        works.map((work, i) => 
+          <Bar
+            key={i} 
+            isActive={selectedBarIndex === i} 
+            onClick={()=> setSelectedBarIndex(i)} 
+            lastChild={i === works.length - 1} 
+          />
+        )
+      }
       {/* below states active bar numerically */}
-      <p>01/06</p>
+      <p className="BarsContainer-barActiveStatus">01/06</p>
     </div>
   );
 }

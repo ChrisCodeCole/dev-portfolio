@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Card.css';
 
-function Card(props) {
+function Card({ path, isSelected, onClick }) {
   // const [isOnline, setIsOnline] = useState(null);
 
   // useEffect(() => {
@@ -16,8 +16,17 @@ function Card(props) {
   //   };
   // });
 
+  console.log("path", path);
   return(
-    <h1>Card</h1>
+    <div 
+      className='Card-imageContainer' 
+      style={{
+        backgroundImage: `url(${path})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center'
+      }}
+    />
   );
 }
 

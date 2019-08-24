@@ -1,0 +1,16 @@
+.Card-imageContainer {
+    width: 20%;
+    border: 1px solid white;
+    border-radius: 5% 5% 0 0;
+    box-shadow: 0.025rem 0.025rem 0.025rem var(--secondary-text-color);
+    cursor: pointer;
+    margin-right: 0.5%;
+}
+
+.Card-imageContainer:nth-child(even) {
+    height: 40%;
+
+}
+.Card-imageContainer:nth-child(odd) {
+    height: 20%;
+}

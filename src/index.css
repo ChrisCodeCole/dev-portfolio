@@ -1,6 +1,6 @@
 :root {
     /* Color Variables */
-    --main-bg-color: #07100B; 
+    --primary-bg-color: rgb(8, 10, 9); 
     --secondary-bg-color: #B9B9B9; 
     --primary-text-color: #004BC2; 
     --secondary-text-color: #F1F1F1; 
@@ -20,4 +20,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-text-color);
+  font-family: var(--primary-font);
+  letter-spacing: 0.1rem;
+}
+
+p {
+  font-family: var(--secondary-font);
+  color: var(--secondary-text-color);
 }
