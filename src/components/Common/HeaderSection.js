@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './styles/HeaderSection.css';
 
 function HeaderSection(props) {
@@ -25,7 +25,7 @@ function HeaderSection(props) {
         <h2 className="HeaderSection-navWorkLink">Work</h2>
         <h2 className="HeaderSection-navAboutLink">About</h2>
         <h2 className="HeaderSection-navContactLink">Contact</h2>
-        <span>Logo</span>
+        {/* <span>Logo</span> */}
       </div>
       <div>
 
