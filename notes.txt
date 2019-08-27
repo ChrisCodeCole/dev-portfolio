@@ -6,5 +6,19 @@ TO DO:
     4. Sketch out idea for information regarding different projects...
         definitely trigger current project information to fade in after transition/scale animation completes
     5. Add a stylish border gradient to numbers detailing active work..
-    6. Add overlay on images
+    6. Add overlay on images, should be same color as background color 
+        (really think about the styling on this..)
+    7. Add default background color..sort out zindex...
+======================================
+
+
+======================================
+CHANGE ANIMATION GOING TO CENTER:
+    1. Make cards translate to center, card going in will translate while fading out quickly
+        (gives vanishing appearance but you know it went to the middle)
+    2. Change image height & width to match window instantly, and place overflow hidden on container
+        (make sure image height & width update with window size)
+        **Try 100vw * 100vh first for easy scaling and responsiveness..
+    3. Animate container to fade in a 'tiny' bit, while scaling to match image size..
+        (probably 1 to 0.9, maybe 0.8 for effect)
 ======================================

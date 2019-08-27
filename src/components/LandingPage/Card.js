@@ -2,6 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import './styles/Card.css';
 import posed from 'react-pose';
 
+const overlayStyle = {
+  position: 'absolute', 
+  height: '100%',
+  width: '100%',
+  backgroundColor: 'rgba(255,255,255,0.5)'
+};
+
 const AnimatedCard = posed.div({
   isNotSelected: { 
     scaleX: 1,
@@ -9,8 +16,8 @@ const AnimatedCard = posed.div({
     x: 0,
     y: 0,
     transition: { 
-      duration: 1000,
-      ease: 'easeIn',
+      duration: 500,
+      ease: 'easeInOut',
     }
   },
   isSelected: { 
@@ -18,9 +25,23 @@ const AnimatedCard = posed.div({
     scaleY: ({ scaleObj }) => scaleObj.scaleX,
     x: ({ translateObj }) =>  translateObj.translateX,
     y: ({ translateObj }) => translateObj.translateY,
-    transition: { 
-      duration: 1000,
-      ease: 'easeIn',
+    transition: {
+      scaleX: {
+        duration: 1000,
+        ease: 'easeIn'
+      },
+      scaleY: {
+        duration: 1000,
+        ease: 'easeIn'
+      },
+      x: {
+        duration: 500,
+        ease: 'easeIn'
+      },
+      y: {
+        duration: 500,
+        ease: 'easeIn'
+      },
     }
   }
 });
@@ -51,8 +72,8 @@ function Card({ path, isSelected, onClick, windowSize }) {
       //calculate appropiate scale to fill screen..
       let scaleX = 0;
       let scaleY = 0;
-      scaleX = windowSize.width / objWidth - 0.025; //-0.025 to avoid scroll bars..
-      scaleY = windowSize.height / objHeight - 0.025;
+      scaleX = windowSize.width / objWidth;
+      scaleY = windowSize.height / objHeight;
       const newScaleObj = { scaleX, scaleY };
       setScaleObj(newScaleObj);
 
@@ -69,34 +90,51 @@ function Card({ path, isSelected, onClick, windowSize }) {
 
   return(
     <AnimatedCard
-      onClick={onClick}
-      ref={cardDiv} 
-      className='Card-imageContainer' 
-      style={Object.assign({}, {
-        backgroundImage: `url(${path})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center'
-        }, 
-        isSelected ? { 
-        //     position: 'absolute', 
-        //     top: windowSize.height / 2, 
-        //     left: windowSize.width / 2,  
-        //     transform: `translate(-50%, -50%) scale(${scaleObj.scaleX}, ${scaleObj.scaleY})`, 
-            margin: 0,
-            border: 'none',
-            borderRadius: 0,
-            boxShadow: 'none',
-            zIndex: -100
-            // opacity: 0.4
-          } : null,
-      )}
+      ref={cardDiv}
+      onClick={onClick} 
+      className='Card-imageContainer'
+      style={isSelected ? { 
+          margin: 0,
+          border: 'none',
+          borderRadius: 0,
+          boxShadow: 'none',
+          zIndex: -10
+        } : null
+      }
       scaleObj={scaleObj}
       translateObj={translateObj}
       poseKey={scaleObj.scaleX}
       initialPose={'isNotSelected'}
       pose={isSelected ? 'isSelected' : 'isNotSelected'}
-    />
+    >
+      <div
+        // onClick={onClick}
+        // ref={cardDiv} 
+        className='Card-image' 
+        style={Object.assign({}, {
+          position: 'relative',
+          backgroundImage: `url(${path})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center'
+          }, 
+
+          isSelected ? { 
+          // //     position: 'absolute', 
+          // //     top: windowSize.height / 2, 
+          // //     left: windowSize.width / 2,  
+          // //     transform: `translate(-50%, -50%) scale(${scaleObj.scaleX}, ${scaleObj.scaleY})`, 
+          //     margin: 0,
+          //     border: 'none',
+              borderRadius: 0,
+          //     boxShadow: 'none',
+          //     zIndex: -100
+          //     // opacity: 0.4
+            } : null,
+        )}
+      />
+      {isSelected && <div className="Card-imageOverlay" />}
+    </AnimatedCard>
   );
 }
 

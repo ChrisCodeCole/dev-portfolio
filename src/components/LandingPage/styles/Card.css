@@ -1,5 +1,6 @@
 .Card-imageContainer {
-    width: 20%;
+    position: relative;
+    width: 19%;
     border: 1px solid white;
     border-radius: 5% 5% 0 0;
     box-shadow: 0.025rem 0.025rem 0.025rem var(--secondary-text-color);
@@ -13,4 +14,21 @@
 }
 .Card-imageContainer:nth-child(odd) {
     height: 60%;
+}
+
+.Card-image{
+    height: 100%;
+    width: 100%;
+    border-radius: 5% 5% 0 0;
+}
+
+.Card-imageOverlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-bg-color);
+    opacity: 0.9;
+    z-index: 10;
+    top: 0;
+    left: 0;
 }

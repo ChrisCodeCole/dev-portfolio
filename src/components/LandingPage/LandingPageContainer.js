@@ -26,6 +26,7 @@ function LandingPageContainer(props) {
         <HeaderSection></HeaderSection>
         <BarsContainer></BarsContainer>
         <CardsContainer></CardsContainer>
+        <div className="LandingPageContainer-backgroundColor" />
     </div>
   );
 }
