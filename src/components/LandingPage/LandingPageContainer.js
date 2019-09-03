@@ -5,6 +5,7 @@ import './styles/LandingPageContainer.css';
 import BarsContainer from './BarsContainer';
 import CardsContainer from './CardsContainer';
 import HeaderSection from '../Common/HeaderSection';
+import ProjectInfoWindow from './ProjectInfoWindow';
 
 function LandingPageContainer(props) {
   // const [isOnline, setIsOnline] = useState(null);
@@ -23,9 +24,10 @@ function LandingPageContainer(props) {
 
   return(
     <div className="LandingPageContainer-mainContainer">
-        <HeaderSection></HeaderSection>
-        <BarsContainer></BarsContainer>
-        <CardsContainer></CardsContainer>
+        <HeaderSection />
+        <BarsContainer />
+        <CardsContainer />
+        <ProjectInfoWindow />
         <div className="LandingPageContainer-backgroundColor" />
     </div>
   );
