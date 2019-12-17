@@ -22,9 +22,9 @@ function HeaderSection(props) {
         <h1 className="HeaderSection-name">Christian Coleman</h1>
       </div>
       <div className="HeaderSection-navItemsContainer">
-        <h2 className="HeaderSection-navWorkLink">Work</h2>
+        {/* <h2 className="HeaderSection-navWorkLink">Work</h2>
         <h2 className="HeaderSection-navAboutLink">About</h2>
-        <h2 className="HeaderSection-navContactLink">Contact</h2>
+        <h2 className="HeaderSection-navContactLink">Contact</h2> */}
         {/* <span>Logo</span> */}
       </div>
       <div>

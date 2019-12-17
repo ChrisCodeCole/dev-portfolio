@@ -1,5 +1,5 @@
 .ProjectInfoWindow-mainContainer {
-    grid-column: 2 / 5;
+    grid-column: 2 / 6;
     grid-row: 1 / 3;
     justify-self: center;
     align-self: center;
@@ -29,6 +29,7 @@
 .ProjectInfoWindow-projectImage {
     flex: 1;
     margin: 5%;
+    height: 90%;
 }
 
 .ProjectInfoWindow-projectDescription {

@@ -5,6 +5,33 @@
     --primary-text-color: #004BC2; 
     --secondary-text-color: #F1F1F1; 
 
+/* 
+Original..
+  --primary-bg-color: rgb(8, 10, 9); 
+  --secondary-bg-color: #B9B9B9; 
+  --primary-text-color: #004BC2; 
+  --secondary-text-color: #F1F1F1; 
+*/
+/* 
+"Friend" Palette
+  #554516 - brown
+  #BFA975 - light brown
+  #8EA0FF - light blue
+  #004BC2 - blue
+*/
+/* 
+  Green/Yellow Palette
+  #015668
+  #263F44
+  #FFD369
+  #FFD369
+*/
+/* 
+  Gold brown: ##A38200
+  Vanilla white: #FFF7D6
+  Ice white: #EFEDFF
+  Light blue: #B9C5FF
+ */
     /* Fonts Variables*/
 
     /* 400, 600italic */

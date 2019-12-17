@@ -52,7 +52,7 @@ const AnimatedCard = posed.div({
   //                           //add overlay style to card for isSelected... && onHover
   //applyAtStart/applyAtEnd={} //accepts style objects to apply either before or after animation
 
-function Card({ path, isSelected, onClick, windowSize }) {
+function Card({ path, isSelected, onClick, windowSize, selectedImageSize }) {
   const [scaleObj, setScaleObj] = useState({});
   const [translateObj, setTranslateObj] = useState({});
   const cardDiv = useRef(null);
@@ -66,27 +66,58 @@ function Card({ path, isSelected, onClick, windowSize }) {
 
       const objCenterX = objLeft + (objWidth / 2);
       const objCenterY = objTop + (objHeight / 2);
-      const windowCenterX = windowSize.width / 2;
-      const windowCenterY = windowSize.height / 2;
+      const imageCenterX = selectedImageSize.projectX + (selectedImageSize.width / 2);
+      const imageCenterY = selectedImageSize.projectY + (selectedImageSize.height / 2);
 
       //calculate appropiate scale to fill screen..
       let scaleX = 0;
       let scaleY = 0;
-      scaleX = windowSize.width / objWidth;
-      scaleY = windowSize.height / objHeight;
+      scaleX = selectedImageSize.width / objWidth;
+      scaleY = selectedImageSize.height / objHeight;
       const newScaleObj = { scaleX, scaleY };
       setScaleObj(newScaleObj);
 
       //calculate correct (x, y) to center of screen..
       let translateX = 0;
       let translateY = 0;
-      translateX = windowCenterX - objCenterX;
-      translateY = windowCenterY - objCenterY;
+      translateX = imageCenterX - objCenterX;
+      translateY = imageCenterY - objCenterY;
       const newTranslateObj = { translateX, translateY };
       setTranslateObj(newTranslateObj);
 
     } 
   }, [windowSize, isSelected]); // run on window size change
+  
+  // useEffect(() => {
+  //   if(isSelected){
+  //     const objHeight = cardDiv.current.offsetHeight;
+  //     const objWidth = cardDiv.current.offsetWidth;
+  //     const objLeft = cardDiv.current.offsetLeft;
+  //     const objTop = cardDiv.current.offsetTop;
+
+  //     const objCenterX = objLeft + (objWidth / 2);
+  //     const objCenterY = objTop + (objHeight / 2);
+  //     const windowCenterX = windowSize.width / 2;
+  //     const windowCenterY = windowSize.height / 2;
+
+  //     //calculate appropiate scale to fill screen..
+  //     let scaleX = 0;
+  //     let scaleY = 0;
+  //     scaleX = windowSize.width / objWidth;
+  //     scaleY = windowSize.height / objHeight;
+  //     const newScaleObj = { scaleX, scaleY };
+  //     setScaleObj(newScaleObj);
+
+  //     //calculate correct (x, y) to center of screen..
+  //     let translateX = 0;
+  //     let translateY = 0;
+  //     translateX = windowCenterX - objCenterX;
+  //     translateY = windowCenterY - objCenterY;
+  //     const newTranslateObj = { translateX, translateY };
+  //     setTranslateObj(newTranslateObj);
+
+  //   } 
+  // }, [windowSize, isSelected]); // run on window size change
 
   return(
     <AnimatedCard

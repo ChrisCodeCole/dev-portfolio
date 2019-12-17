@@ -30,3 +30,18 @@ PROJECT TECH STACK IMAGES ANIMATION:
     * Put shadow on div container
     * Translate only the image down
 ======================================
+
+======================================
+TO DO(Dec 2019):
+    * Have the image fade in the background as well (two images)
+    * Make "Project Title" window translate from top as well? and also translate out when switching cards?
+    * Change left bar functionality to scroll / click between Intro Grahpic / Work / About / Contact
+    * Hover over left bar & show text representing what it'll point to
+======================================
+
+======================================
+Completed (Dec 2019):
+    * Restyle animation to translate to "Project Title" window
+    * Remove top-right menu items..
+    * Shift over Project Title Window.. & make bigger
+======================================
